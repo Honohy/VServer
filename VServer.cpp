@@ -58,7 +58,8 @@ int main(int argc, char* argv[])
     std::cout << "Connection success" << std::endl;
     char message[256] = "Hello new client";
     send(NewConnection, message,sizeof message, NULL);
+    recv(NewConnection, message,sizeof(message),NULL);
+    send(NewConnection, message,sizeof message, NULL);
 
-    system("pause");
     return 0;
 }
